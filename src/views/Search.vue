@@ -202,9 +202,6 @@ export default {
         this.getSearchData();
       },
     },
-    "$store.state.search.searchInfo"(val) {
-      console.log(val);
-    },
   },
   mounted: function () {
     window.addEventListener("scroll", this.handleScroll, true);
