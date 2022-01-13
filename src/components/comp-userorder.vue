@@ -5,16 +5,54 @@
             <router-link class="more" to="/user/order/0">全部订单<i class="bi bi-chevron-right"></i></router-link>
         </div>
         <div class="orderList">
-            <router-link class="orderNavItem" :to="item.link" v-for="(item,index) in $store.state.personal.userOrder.list" :key="index">
+            <router-link class="orderNavItem" to="/user/order/0">
                 <div class="itemImg">
-                    <img :src="item.src" alt="">
+                    <img src="../assets/img/personal/payment.png" alt="">
                 </div>
-                <span v-if="item.num">{{item.num}}</span>
-                <div class="name">{{item.name}}</div>
+                <span>{{numObj.unpaid_count}}</span>
+                <div class="name">待付款</div>
+            </router-link>
+            <router-link class="orderNavItem" to="/user/order/1">
+                <div class="itemImg">
+                    <img src="../assets/img/personal/deliver.png" alt="">
+                </div>
+                <span>{{numObj.unshipped_count}}</span>
+                <div class="name">待发货</div>
+            </router-link>
+            <router-link class="orderNavItem" to="/user/order/2">
+                <div class="itemImg">
+                    <img src="../assets/img/personal/receipt.png" alt="">
+                </div>
+                <span>{{numObj.received_count}}</span>
+                <div class="name">待收获</div>
+            </router-link>
+            <router-link class="orderNavItem" to="/user/order/3">
+                <div class="itemImg">
+                    <img src="../assets/img/personal/evaluate.png" alt="">
+                </div>
+                <span>{{numObj.evaluated_count}}</span>
+                <div class="name">待评价</div>
+            </router-link>
+            <router-link class="orderNavItem" to="/user/order/4">
+                <div class="itemImg">
+                    <img src="../assets/img/personal/refund.png" alt="">
+                </div>
+                <span>{{numObj.refund_count}}</span>
+                <div class="name">售后/退款</div>
             </router-link>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data(){
+        return{
+            numObj: this.$store.state.personal.userInfo.orderStatusNum,
+        }
+    }
+}
+</script>
 
 <style lang="less">
 @import "../assets/less/variable.less";

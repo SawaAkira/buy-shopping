@@ -47,7 +47,6 @@ export default {
   data(){
     return{
       userInfo: "",
-      userOrderList: [],
     }
   },
   components: {
@@ -79,27 +78,15 @@ export default {
         },
       }).then((data) => {
         if (data.data.status == 200){
+          this.$store.dispatch("setPersonalShowAsync", true);
           this.userInfo = data.data.data;
           this.$store.dispatch("personal/setUserInfoAsync", this.userInfo);
-          this.addNum();
         } else {
           if(data.data.msg == "登录已过期,请重新登录"){
             localStorage.removeItem("token");
           }
         }
       });
-    },
-    addNum(){
-      let list = this.userOrderList.list;
-      let {unpaid_count,unshipped_count,received_count,evaluated_count,refund_count} = this.userInfo.orderStatusNum;
-      let arr = [unpaid_count,unshipped_count,received_count,evaluated_count,refund_count];
-      list.forEach((item,index) => {
-        item.num = arr[index];
-        item.link = "/user/order/" + index;
-      });
-      this.userOrderList.list = list;
-      this.$store.dispatch("setPersonalShowAsync", true);
-      this.$store.dispatch("personal/setUserOrderAsync", this.userOrderList);
     },
   },
   beforeRouteEnter(to, from, next) {

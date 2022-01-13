@@ -6,9 +6,6 @@ export default {
         orderList: [],
     },
     mutations: {
-        setUserOrder(state,value){
-            state.userOrder = value;
-        },
         setUserInfo(state,value){
             state.userInfo = value;
         },
@@ -17,9 +14,6 @@ export default {
         },
     },
     actions: {
-        setUserOrderAsync(content,value){
-            content.commit('setUserOrder',value)
-        },
         setUserInfoAsync(content,value){
             content.commit('setUserInfo',value)
         },
