@@ -56,19 +56,7 @@ export default {
     this.init();
   },
   methods: {
-    init() {
-      get("../data/userOrder.json")
-        .then((response) => {
-          let res = response.data;
-          if (res.status == 200) {
-            let data = res.data;
-            this.userOrderList = data;
-            this.getInfo();
-          }
-        });
-      
-    },
-    getInfo(){
+    init(){
       let token = this.$store.state.token;
       axios({
         method: "GET",
