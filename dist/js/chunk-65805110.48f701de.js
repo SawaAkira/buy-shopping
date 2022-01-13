@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-65805110"],{"14e0":function(e,t,n){"use strict";n("e9d1")},1511:function(e,t,n){"use strict";n.r(t);var o=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"user"},[n("router-view")],1)},u=[],c={beforeRouteEnter:function(e,t,n){localStorage.getItem("token")?n():n({path:"/login"})}},r=c,i=(n("14e0"),n("2877")),s=Object(i["a"])(r,o,u,!1,null,null,null);t["default"]=s.exports},e9d1:function(e,t,n){}}]);
+//# sourceMappingURL=chunk-65805110.48f701de.js.map

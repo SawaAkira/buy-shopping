@@ -1,0 +1,29 @@
+{
+    "status": 200,
+    "data": {
+        "title": "我的订单",
+        "more": "全部订单",
+        "list": [
+            {
+                "src": "../img/personal/payment.png",
+                "name": "待付款"
+            },
+            {
+                "src": "../img/personal/deliver.png",
+                "name": "待发货"
+            },
+            {
+                "src": "../img/personal/receipt.png",
+                "name": "待收获"
+            },
+            {
+                "src": "../img/personal/evaluate.png",
+                "name": "待评价"
+            },
+            {
+                "src": "../img/personal/refund.png",
+                "name": "售后/退款"
+            }
+        ]
+    }
+}
