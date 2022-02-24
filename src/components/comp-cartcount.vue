@@ -49,9 +49,8 @@ export default {
       if (this.num <= 1) {
         this.num = 1;
         this.isDisabled = true;
-      } else {
-        this.saveNum(this.num);
-      }
+      };
+      this.saveNum(this.num);
     },
     saveNum(num) {
       let token = this.$store.state.token;

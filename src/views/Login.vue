@@ -42,6 +42,7 @@ export default {
             if (res.status == 200) {
               let token = res.data.token;
               let expires_time = res.data.expires_time;
+              this.$store.dispatch("setTokenAsync", token);
               localStorage.setItem("expires_time", expires_time);
               localStorage.setItem("token", token);
               if(this.toPath != ""){

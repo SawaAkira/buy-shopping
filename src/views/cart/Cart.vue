@@ -54,7 +54,7 @@ import CartList from "@/components/comp-cartlist.vue";
 export default {
   data() {
     return {
-      isShow: true,
+      isShow: false,
       isCheckedAll: false,
       isManage: false,
       sumPrice: "0.00",
@@ -77,7 +77,7 @@ export default {
           "Authori-zation": "Bearer " + token,
         },
       }).then((data) => {
-        if (data.data.data) {
+        if (data.data.data.valid.length) {
           this.isShow = true;
           let cartData = data.data.data.valid;
           let cartList = [];
@@ -97,6 +97,7 @@ export default {
           this.$store.dispatch("cart/setCartListAsync", cartList);
         } else {
           this.isShow = false;
+          this.$store.dispatch("setCartShowAsync", true);
         }
       });
     },
